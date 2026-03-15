@@ -1,3 +1,5 @@
+using Evaluator.Logic;
+
 namespace Evaluator.UI.Windows
 {
     public partial class Form1 : Form
@@ -10,8 +12,8 @@ namespace Evaluator.UI.Windows
         private void btn7_Click(object sender, EventArgs e)
         {
             txtDisplay.Text += "7";
-
         }
+
         private void btn8_Click(object sender, EventArgs e)
         {
             txtDisplay.Text += "8";
@@ -76,11 +78,40 @@ namespace Evaluator.UI.Windows
         {
             txtDisplay.Text = txtDisplay.Text.Substring(0, txtDisplay.Text.Length - 1);
         }
-       
+
+        private void btnPlus_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += "+";
+        }
+
+        private void btnMinus_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += "-";
+        }
+
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtDisplay.Text = string.Empty;
         }
-    }
 
+        private void btnOpenParenthesis_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += "(";
+        }
+
+        private void btnCloseParenthesis_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += ")";
+        }
+
+        private void btnPow_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += "^";
+        }
+
+        private void btnResult_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += $"={MyEvaluator.Evaluate(txtDisplay.Text)}";
+        }
+    }
 }
