@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Evaluator.Logic
+﻿namespace Evaluator.Logic
 {
     public class Stack<T>
     {
